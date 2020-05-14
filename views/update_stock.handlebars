@@ -1,0 +1,99 @@
+<!-- Page Content -->
+
+<div class="content">
+    <!-- jQuery Validation (.js-validation class is initialized in js/pages/be_forms_validation.min.js which was auto compiled from _es6/pages/be_forms_validation.js) -->
+    <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
+            <!-- Grid Sizes -->
+    <br /><br />
+            <div class="block">
+                <div class="block-header">
+<!--                    <h3 class="block-title">Update stock</h3>-->
+                    <!--
+                                           Back button&ndash;&gt;-->
+                    <h1>
+                    <a class="font-w600 text-dual" href="/inventory">
+                        <i class="fa fa-arrow-circle-left"></i>
+                        <span class="smini-hide">
+                            <span class="font-w700 font-size-h5"></span>
+                            <span class="font-w400"><!----></span>
+                        </span>
+                    </a>
+                        <a class="font-w600 text-dual" href="/inventory/update_stock/{{update_info.id}}">
+                            <i class="si si-refresh "></i>
+                            <span class="smini-hide">
+                                <span class="font-w700 font-size-h5"></span>
+                                <span class="font-w400"><!----></span>
+                            </span>
+                        </a>
+                    </h1>
+                </div>
+                <div class="block-content block-content-full">
+                    <form action="/inventory/update_stock/{{update_info.id}}" method="POST">
+                        <div class="row items-push">
+                            <div class="col-lg-4">
+                                <p class="font-size-sm text-muted">
+                                    Update the available stock in store.
+                                    If you want to change quantity or other info please
+                                    <a href="/inventory/edit/{{update_info.id}}">click here</a>
+                                </p>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="form-group row">
+<!--                                    <label class="col-12">Update stock</label>-->
+                                    <div class="col-3">
+                                        <input type="text" name="available" class="form-control" value="{{update_info.available}}">
+                                    </div>
+                                </div>
+
+                                <!-- Submit -->
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Update stock</button>
+                                </div>
+                                <!-- END Submit -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END Grid Sizes -->
+</div>
+
+
+<!-- Dynamic Table Simple -->
+<div class="block">
+    <div class="block-content block-content-full">
+        <!-- DataTables init on table by adding .js-dataTable-simple class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+        <table class="table table-bordered table-striped table-vcenter js-dataTable-simple">
+            <thead>
+            <tr>
+                <th>Batch</th>
+                <th>Drug</th>
+                <th>Expiry</th>
+                <th>Quantity</th>
+                <th>Category</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="d-none d-sm-table-cell font-size-sm">
+                    <em class="text-muted">{{update_info.batch}}</em>
+                </td>
+                <td class="font-w600 font-size-sm">{{update_info.medicine}}</td>
+                <td>
+                    <span class="text-muted font-size-sm">{{update_info.expiry}}</span>
+                </td>
+                <td>
+                    <em class="text-muted font-size-sm">{{update_info.quantity}}</em>
+                </td>
+                <td>
+                    <em class="text-muted font-size-sm">{{update_info.category}}</em>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- END Dynamic Table Simple -->
+
+<!-- END Page Content -->
+</main>

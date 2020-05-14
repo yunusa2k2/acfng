@@ -1,0 +1,113 @@
+<!-- Page Content -->
+
+<div class="content">
+    <!-- jQuery Validation (.js-validation class is initialized in js/pages/be_forms_validation.min.js which was auto compiled from _es6/pages/be_forms_validation.js) -->
+    <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
+
+    <br /><br />
+    <h1 class="flex-sm-fill h3 my-2">
+        Edit Inventory <small class="d-block d-sm-inline-block mt-2 mt-sm-0 font-size-base font-w400 text-muted">&nbsp;</small>
+    </h1>
+
+    <h1>
+        <a class="font-w600 text-dual" href="/inventory/drug_info/{{edit_info.id}}">
+            <i class="fa fa-arrow-circle-left"></i>
+            <span class="smini-hide">
+                <span class="font-w700 font-size-h5"></span>
+                <span class="font-w400"><!----></span>
+            </span>
+        </a>
+        <a class="font-w600 text-dual" href="/inventory/edit/{{edit_info.id}}">
+            <i class="si si-refresh "></i>
+            <span class="smini-hide">
+                <span class="font-w700 font-size-h5"></span>
+                <span class="font-w400"><!----></span>
+            </span>
+        </a>
+    </h1>
+    <form class="js-validation" action="/inventory/edit/{{edit_info.id}}" method="post">
+        <div class="block">
+            <!--<div class="block-header">
+                <h3 class="block-title">Validation Form</h3>
+            </div>
+
+            <! -- Displaying Error messages with Icons -->
+            <div class="block">
+                <div class="block-content">
+                    {{#each errors}}
+                        <div class="alert alert-danger d-flex align-items-center justify-content-between" role="alert">
+                            <div class="flex-fill mr-3">
+                                <p class="mb-0">{{text}} <a class="alert-link" href="javascript:void(0)">!</a></p>
+                            </div>
+                            <div class="flex-00-auto">
+                                <i class="fa fa-fw fa-times-circle"></i>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+
+
+
+            <div class="block-content block-content-full">
+                <!-- Advanced -->
+<!--                <h2 class="content-heading border-bottom mb-4 pb-2">Edit Inventory</h2>-->
+                <div class="row items-push">
+
+                    <!--- First Columns -------------->
+                    <div class="col-lg-6 col-xl-6">
+                        <div class="form-group">
+                            <label for="val-currency">Medicine <span class="text-danger">*</span></label>
+                            <input type="text"  class="form-control" id="val-currency" name="medicine" value="{{edit_info.medicine}}" placeholder="Enter medicine name">
+                        </div>
+                        <div class="form-group">
+                            <label for="val-website">Batch <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="val-website" name="batch" value="{{edit_info.batch}}" placeholder="Enter batch number">
+                        </div>
+                        <div class="form-group">
+                            <label for="val-number">Expiry <span class="text-danger">*</span></label>
+                            <input type="date"  class="form-control" id="expiry" name="expiry" value="{{edit_info.expiry}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="val-number">Quantity <span class="text-danger">*</span></label>
+                            <input type="text"  class="form-control" id="val-number" name="quantity" value="{{edit_info.quantity}}" placeholder="Enter the stock quantity">
+                        </div>
+                    </div>
+                    <!--- End First Columns -------------->
+
+                    <!--- Second Columns -------------->
+                    <div class="col-lg-6 col-xl-6">
+                        <div class="form-group">
+                            <label for="val-skill">Category <span class="text-danger">*</span></label>
+                            <select class="form-control" id="category" name="category">
+                                <option value="">Please select</option>
+                                <option value="Tablets" {{#ifCond edit_info.category 'Tablets'}} selected="selected" {{/ifCond}}>Tablets</option>
+                                <option value="Syrup" {{#ifCond edit_info.category 'Syrup'}} selected="selected" {{/ifCond}}>Syrup</option>
+                                <option value="Drops" {{#ifCond edit_info.category 'Drops'}} selected="selected" {{/ifCond}}>Drops</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="val-number">Note</label>
+                            <textarea class="form-control" rows="6" name="note" placeholder="Enter any additional information">{{edit_info.note}}</textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="row items-push">
+                            <div class="col-lg-7 offset-lg-4">
+                                <button type="submit" class="btn btn-primary">Edit Inventory</button>
+                                <button type="reset" class="btn btn-danger">Reset</button>
+                            </div>
+                        </div>
+                        <!-- END Submit -->
+                    </div>
+                    <!--- End Second Columns -------------->
+                </div>
+                <!-- END Advanced -->
+            </div>
+        </div>
+    </form>
+    <!-- jQuery Validation -->
+</div>
+<!-- END Page Content -->
+
+</main>

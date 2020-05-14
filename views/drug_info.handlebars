@@ -1,0 +1,120 @@
+<!-- Main Container -->
+<main id="main-container">
+    <!-- Hero -->
+    <div class="bg-body-light">
+        <div class="content content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+                <h1 class="flex-sm-fill h1 my-sm-0">
+                    <small class="font-size-base font-w400 text-muted"><b>Created at: </b> {{drug_info.createdAt}}</small><br />
+                    <small class="font-size-base font-w400 text-muted"><b>Last update: </b> {{drug_info.updatedAt}}</small><br />
+                    <br />
+
+                    <!-- Back button-->
+                    <a class="font-w600 text-dual" href="/inventory">
+                        <i class="fa fa-arrow-circle-left"></i>
+                        <span class="smini-hide">
+                            <span class="font-w700 font-size-h5"></span>
+                            <span class="font-w400"><!----></span>
+                        </span>
+                    </a>&nbsp;
+                    <a class="font-w600 text-dual" href="/inventory/drug_info/{{drug_info.id}}">
+                        <i class="si si-refresh "></i>
+                        <span class="smini-hide">
+                            <span class="font-w700 font-size-h5"></span>
+                            <span class="font-w400"><!----></span>
+                        </span>
+                    </a>
+
+                    <a href="/inventory/edit/{{drug_info.id}}" ><button type="button" class="btn btn-outline-success mr-1 mb-3">
+                        <i class="fa fa-edit mr-1"></i> Edit info
+                    </button></a>
+
+                </h1>
+<!--                <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">-->
+<!--                    <ol class="breadcrumb breadcrumb-alt">-->
+<!--                        <li class="breadcrumb-item">Layout</li>-->
+<!--                        <li class="breadcrumb-item">Page</li>-->
+<!--                        <li class="breadcrumb-item" aria-current="page">-->
+<!--                            <a class="link-fx" href="">Default</a>-->
+<!--                        </li>-->
+<!--                    </ol>-->
+<!--                </nav>-->
+            </div>
+            {{#if edit_stock}}
+                <div class="alert alert-success"><i>{{edit_stock}}</i></div>
+            {{/if}}
+        </div>
+    </div>
+    <!-- END Hero -->
+
+    <!-- Page Content -->
+    <div class="content">
+
+        <div class="block">
+            <div class="block-content text-left">
+                <p>
+                    <b>DRUG NAME:</b><br />
+                    {{drug_info.medicine}}
+                </p>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block-content text-left">
+                <p>
+                    <b>BATCH NUMBER:</b><br />
+                    {{drug_info.batch}}
+                </p>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block-content text-left">
+                <p>
+                    <b>EXPIRY DATE:</b><br />
+                    {{drug_info.expiry}}
+                </p>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block-content text-left">
+                <p>
+                    <b>QUANTITY:</b><br />
+                    {{drug_info.quantity}}
+                </p>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block-content text-left">
+                <p>
+                    <b>AVAILABILITY:</b><br />
+                    {{drug_info.available}}
+                </p>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block-content text-left">
+                <p>
+                    <b>CATEGORY:</b><br />
+                    {{drug_info.category}}
+                </p>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block-content text-left">
+                <p>
+                    <b>DRUG INFORMATION:</b><br />
+                    {{drug_info.note}}
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- END Page Content -->
+</main>
+<!-- END Main Container -->
