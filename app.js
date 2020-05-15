@@ -9,10 +9,10 @@ const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 const Inventory = require('./models/Inventory');
 const User = require('./models/User');
-const PORT = process.env.PORT || 3000;
+//const PORT = process.env.PORT || 3000;
 
 // for heroku
-//const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 80;
 
 //Authentication packages
 const passport = require('passport');
