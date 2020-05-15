@@ -9,18 +9,15 @@ const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 const Inventory = require('./models/Inventory');
 const User = require('./models/User');
-//const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // for heroku
-const PORT = process.env.PORT || 80;
-
-
+//const PORT = process.env.PORT || 80;
 
 //Authentication packages
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require("express-session");
-
 
 // Database
 const  db = require('./config/database');
@@ -141,14 +138,11 @@ passport.use('local', new LocalStrategy(
     )
 );
 
-
-
 User.sequelize.sync().then(function() {
     console.log('Nice! Database looks fine')
 }).catch(function(err) {
     console.log(err, "Something went wrong with the Database Update!")
 });
-
 
 
 app.listen(PORT, console.log('server started on port ' + PORT));
